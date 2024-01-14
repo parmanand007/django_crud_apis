@@ -6,5 +6,7 @@ djangorestframework-simplejwt==4.6.0
 pytz==2021.1
 sqlparse==0.4.1
 setuptools
-psycopg2
+dj-database-url
+psycopg2-binary
 python-dotenv
+python-decouple
