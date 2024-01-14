@@ -1,0 +1,4 @@
+[
+    {"name": "Bear", "type": "Carnivore", "sound": "Roar","owner":"test", "extra_information": {"color": "golden", "weight": 200}},
+    {"name": "Deer", "type": "Herbivore", "sound": "Trumpet","owner":"test", "extra_information": {"color": "gray", "tusk_length": 2}}
+]
