@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-oqps2r%7fko0(8ofmqwj&iek(a#3_^z^i=dm*t!6ro!#xh6a2q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -100,7 +100,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crud_api.wsgi.application'
 
-
+# WSGI_APPLICATION = 'vercel_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASES = {
