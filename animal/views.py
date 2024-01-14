@@ -45,7 +45,8 @@ def animal_detail_view(request, pk):
     try:
         animal = Animal.objects.get(pk=pk)
     except Animal.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        response={"status":"not found"}
+        return Response(response,status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = AnimalSerializer(animal)
@@ -59,6 +60,8 @@ def animal_detail_view(request, pk):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        #we can add validation for super user
+        # #we can add validation for super user
+        # print("delete")
         animal.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        response={"status":"deleted succesfully","entity":animal.name}
+        return Response(response,status=status.HTTP_204_NO_CONTENT)
