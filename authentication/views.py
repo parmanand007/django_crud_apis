@@ -7,6 +7,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.shortcuts import render
+
+def index(request):
+    return render(request,'authentication/index.html')
+    
 
 
 class RegisterView(generics.CreateAPIView):
