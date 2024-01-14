@@ -14,6 +14,7 @@ from .permissions import IsOwnerOrReadOnly
 from .serializers import AnimalSerializer
 from .pagination import CustomPagination
 from .filters import AnimalFilter
+from django.contrib.auth.models import User
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
@@ -62,7 +63,19 @@ def animal_detail_view(request, pk):
 
     elif request.method == 'DELETE':
         # #we can add validation for super user
-        # print("delete")
-        animal.delete()
-        response={"status":"deleted succesfully","entity":animal.name}
-        return Response(response,status=status.HTTP_204_NO_CONTENT)
+        if request.user and request.user.is_superuser:
+            animal.delete()
+            response={"status":"deleted succesfully by superuser","entity":animal.name}
+            return Response(response,status=status.HTTP_204_NO_CONTENT)
+        elif  request.user:
+            if animal.owner_id==request.user.id:
+                animal.delete()
+                response={"status":"deleted succesfully by owner","entity":animal.name}
+                return Response(response,status=status.HTTP_204_NO_CONTENT)
+            else:
+                response={"status":"fail","user":'you are not owner of this animal'}
+                return Response(response,status=status.HTTP_401_UNAUTHORIZED)
+        else:
+            response={"status":"fail","user":'anonymous user'}
+            return Response(response,status=status.HTTP_403_FORBIDDEN)
+            
