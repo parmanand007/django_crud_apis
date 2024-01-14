@@ -108,13 +108,19 @@ WSGI_APPLICATION = 'crud_api.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT"),
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "FaB1CF5fG4d46e1A-e4-af3aa226a5Fd",
+        "HOST": "monorail.proxy.rlwy.net",
+        "PORT": "50689",
     }
 }
+
+# DB_NAME=railway
+# DB_USER=postgres
+# DB_PASSWORD=FaB1CF5fG4d46e1A-e4-af3aa226a5Fd
+# DB_HOST=monorail.proxy.rlwy.net
+# DB_PORT=50689
 # DATABASES={}
 # DATABASES['default']=dj_database_url.config()
 
