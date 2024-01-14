@@ -39,6 +39,7 @@ def animal_list_create_view(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated, IsOwnerOrReadOnly])
 def animal_detail_view(request, pk):
