@@ -1,8 +1,8 @@
 
 # This project is deployed also you can use below api(domain) instead of localhost.
-https://django-crud-apis.vercel.app/api/v1/auth/register
-https://django-crud-apis.vercel.app/api/v1/auth/login
-https://django-crud-apis.vercel.app/api/v1/auth/logout
+https://django-crud-apis.vercel.app/api/v1/auth/register<br/>
+https://django-crud-apis.vercel.app/api/v1/auth/login<br/>
+https://django-crud-apis.vercel.app/api/v1/auth/logout<br/> 
 etc..
 
 
