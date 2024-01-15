@@ -13,7 +13,12 @@ etc..
 - Python 3.12
 - Django 3.1
 - Django REST Framework
-- Postgres
+- Postgres 
+
+## Deployed Database Url
+```
+DATABASE_URL=postgresql://postgres:FaB1CF5fG4d46e1A-e4-af3aa226a5Fd@monorail.proxy.rlwy.net:50689/railway
+```
 
 ## Installation
 After you cloned the repository, you want to create a virtual environment, so you have a clean python installation.
